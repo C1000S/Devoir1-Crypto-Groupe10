@@ -1,0 +1,11 @@
+# Run all parties
+python3 test_parties.py
+
+# Run specific partie
+python3 test_parties.py 1.1
+python3 test_parties.py 1.2
+python3 test_parties.py 2.1
+python3 test_parties.py 2.2
+python3 test_parties.py 3.2
+python3 test_parties.py 3.4
+python3 test_parties.py vigenere

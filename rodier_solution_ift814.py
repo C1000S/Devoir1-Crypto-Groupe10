@@ -195,7 +195,7 @@ def EveVigenere(c):
     return essais
 
 def charger(path):
-    s=Path(path).read_text()
+    s=Path(path).read_text(encoding='utf-8')
     get=lambda pattern: re.search(pattern,s).group(1)
     return {'cesar':[(int(a),int(b)) for a,b in re.findall(r'k1 = (\d+), k2 = (\d+)',s)],
             'sub':re.findall(r'Exécution \d : ([a-z]{26})',s),
@@ -209,22 +209,28 @@ def charger(path):
 
 def main(path):
     p=charger(path);r={}
+    # Verification des empreintes (consigne: detecter erreur de copie)
     r['empreintes']={
       'sub':hashlib.sha256(p['sub_c'].encode()).hexdigest()[:8],
       'otp':hashlib.sha256((format(p['c1'],'060x')+format(p['c2'],'060x')).encode()).hexdigest()[:8],
       'vigenere':hashlib.sha256(p['vigenere'].encode()).hexdigest()[:8]}
     assert r['empreintes']=={'sub':'2b86f4d7','otp':'d7b627e1','vigenere':'768d2dfa'}
+    
+    # PARTIE 1.1 - Cesar a double decalage (cles imposees k1,k2)
     r['cesar']=[]
     for k in p['cesar']:
         c=E1(k,MESSAGE);m=D1(k,c);assert m==MESSAGE
         r['cesar'].append({'m':MESSAGE,'k':k,'c':c,'bob':m,'candidats':Eve1(c)})
+    
+    # PARTIE 1.2 - Substitution monoalphabetique (cles imposees 26 lettres)
     r['sub_traces']=[]
     for k in p['sub']:
         c=E3(k,MESSAGE);m=D3(k,c);assert m==MESSAGE
         r['sub_traces'].append({'m':MESSAGE,'k':k,'c':c,'bob':m})
+    # Analyse du cryptogramme sub_c (frequences, bigrammes, trigrammes, etapes d'attaque)
     mp=dict(zip('YAOEJGBWHKFIXPDRTZSCUQV'.lower(),'depuisclgnraxtomhqvfjyb'))
     clair=partiel(p['sub_c'],mp);assert '_' not in clair
-    # Les lettres k,w,z sont absentes : completion choisie, sans prétendre à l'unicité.
+    # Les lettres k,w,z sont absentes : completion choisie, sans pretendre a l'unicite.
     complet=mp|{'l':'k','m':'w','n':'z'}
     k=''.join(next(a for a,v in complet.items() if v==b) for b in ALPHABET)
     assert E3(k,clair)==p['sub_c']
@@ -233,14 +239,19 @@ def main(path):
       'trigrammes':frequences(p['sub_c'],3)[:10], 'etapes':[{'correspondances':m,'texte':partiel(p['sub_c'],m)} for m in stages],
       'clair':clair,'cle_compatible':k,'lettres_chiffrees_absentes':'lmn','lettres_claires_absentes':'kwz',
       'nombre_completions':6,'reencodage_exact':True,'espace_cles':math.factorial(26),'bits_cles':math.log2(math.factorial(26))}
+    
+    # PARTIE 2.1 - Masque jetable (OTP) (cles imposees 160 bits)
     mb=vers_bits(MESSAGE);r['otp_traces']=[]
     for k in p['otp']:
         c=E2(k,MESSAGE);m=D2(k,c);assert m==MESSAGE
         r['otp_traces'].append({'m':MESSAGE,'m_hex':format(mb,'040x'),'m_bits':format(mb,'0160b'),
                               'k':format(k,'040x'),'c':format(c,'040x'),'bob':m})
+    # Demonstration de malléabilité OTP: cle alternative pour 'a'*32
     autre='a'*32;c=E2(p['otp'][0],MESSAGE);kp=c^vers_bits(autre)
     assert D2(kp,c)==autre
     r['otp_alternatif']={'m_prime':autre,'k_prime':format(kp,'040x'),'verification':D2(kp,c)}
+    
+    # PARTIE 2.2 - Reutilisation de cle OTP (c1, c2 fournis, mot connu 'protocole')
     r['otp_reutilisation']={'xor':format(p['c1']^p['c2'],'060x'), 'candidats':Eve2(p['c1'],p['c2']),
                            'statut':'reconstruction linguistique compatible, rechiffrement vérifié'}
     m1='modifiezimmediatementleprotocoledesecurite'.ljust(48,'x')
@@ -256,6 +267,8 @@ def main(path):
         fragment=''.join(ALPHABET[blocs[pos+i]^(ord(a)-97)] for i,a in enumerate(texte))
         expansions.append({'hypothese_sur':cote,'position':pos,'hypothese':texte,'fragment_autre':fragment})
     r['otp_reutilisation']['extensions']=expansions
+    
+    # PARTIE 3.2 - MAC (cle k imposee 64 bits, traces sur messages tests)
     r['mac_traces']=[]
     for m in [0,1<<63,(1<<32)-1,0xaaaaaaaaaaaaaaaa]:
         t=MAC(p['mac_k'],m);mf=m^(1<<63)
@@ -263,14 +276,19 @@ def main(path):
         assert Verif(p['mac_k'],m,t^1)==0
         r['mac_traces'].append({'m_hex':format(m,'016x'),'m_bits':format(m,'064b'),
           'k':format(p['mac_k'],'016x'),'t':format(t,'08x'),'v':1,'m_prime':format(mf,'016x'),'v_prime':1})
+    
+    # PARTIE 3.4 - MAC forgerie (m_obs, t_obs observes -> tag pour m_cible)
     kb,t=EveMAC(p['m_obs'],p['t_obs'],p['m_cible']);cles=[kb,(1<<32)|kb]
     for k in cles:
         assert Verif(k,p['m_obs'],p['t_obs'])==1 and Verif(k,p['m_cible'],t)==1
     r['mac_forgerie']={'k_bas':format(kb,'08x'),'tag':format(t,'08x'),'cles_compatibles':[format(k,'016x') for k in cles]}
+    
+    # BONUS - Chiffre de Vigenere (463 lettres, Kasiski + Friedman/IC)
     r['vigenere']={'kasiski':kasiski(p['vigenere']),'essais':EveVigenere(p['vigenere'])}
     meilleur=max(r['vigenere']['essais'],key=lambda a:a['ic_moyen'])
     assert Vigenere(meilleur['cle'],meilleur['texte'])==p['vigenere']
     r['vigenere']['retenu']=meilleur
+    
     # Exemples effectifs des generateurs et de l'aller-retour associe.
     k1=Gen1();k3=Gen3();k2=Gen2();km=Gen()
     r['exemples_aleatoires']={'Gen1':{'k':k1,'c':E1(k1,MESSAGE),'m_retrouve':D1(k1,E1(k1,MESSAGE))},
