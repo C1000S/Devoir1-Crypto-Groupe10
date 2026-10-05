@@ -1,0 +1,1008 @@
+{
+  "empreintes": {
+    "sub": "2b86f4d7",
+    "otp": "d7b627e1",
+    "vigenere": "768d2dfa"
+  },
+  "cesar": [
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": [
+        2,
+        20
+      ],
+      "c": "eyecgmvfgggmuuiyefcctufyebkzhlgl",
+      "bob": "ceciestlemessageclairadechiffrer",
+      "candidats": [
+        {
+          "cle": [
+            2,
+            20
+          ],
+          "texte": "ceciestlemessageclairadechiffrer",
+          "mots": [
+            "ceci",
+            "est",
+            "le",
+            "message",
+            "clair",
+            "a",
+            "dechiffrer"
+          ]
+        }
+      ]
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": [
+        19,
+        0
+      ],
+      "c": "vevixsmlxmxslazevltikawevhbfyrxr",
+      "bob": "ceciestlemessageclairadechiffrer",
+      "candidats": [
+        {
+          "cle": [
+            19,
+            0
+          ],
+          "texte": "ceciestlemessageclairadechiffrer",
+          "mots": [
+            "ceci",
+            "est",
+            "le",
+            "message",
+            "clair",
+            "a",
+            "dechiffrer"
+          ]
+        }
+      ]
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": [
+        20,
+        8
+      ],
+      "c": "wmwqyantyuyamiamwtuqlixmwpcnzzyz",
+      "bob": "ceciestlemessageclairadechiffrer",
+      "candidats": [
+        {
+          "cle": [
+            20,
+            8
+          ],
+          "texte": "ceciestlemessageclairadechiffrer",
+          "mots": [
+            "ceci",
+            "est",
+            "le",
+            "message",
+            "clair",
+            "a",
+            "dechiffrer"
+          ]
+        }
+      ]
+    }
+  ],
+  "sub_traces": [
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": "rsaofhvpmwtqzbkcigynxldeju",
+      "c": "afamfynqfzfyyrvfaqrmgrofapmhhgfg",
+      "bob": "ceciestlemessageclairadechiffrer"
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": "ixodqfulgkaenhscjbtvmpzyrw",
+      "c": "oqogqtveqnqttiuqoeigbidqolgffbqb",
+      "bob": "ceciestlemessageclairadechiffrer"
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "k": "jwxqkcgyhftoudpvrisenmabzl",
+      "c": "xkxhkseokukssjgkxojhijqkxyhcciki",
+      "bob": "ceciestlemessageclairadechiffrer"
+    }
+  ],
+  "sub_analyse": {
+    "frequences": [
+      {
+        "groupe": "a",
+        "nombre": 68,
+        "pourcentage": 17.08542713567839
+      },
+      {
+        "groupe": "g",
+        "nombre": 40,
+        "pourcentage": 10.050251256281408
+      },
+      {
+        "groupe": "e",
+        "nombre": 32,
+        "pourcentage": 8.040201005025125
+      },
+      {
+        "groupe": "f",
+        "nombre": 31,
+        "pourcentage": 7.788944723618091
+      },
+      {
+        "groupe": "k",
+        "nombre": 29,
+        "pourcentage": 7.28643216080402
+      },
+      {
+        "groupe": "p",
+        "nombre": 27,
+        "pourcentage": 6.78391959798995
+      },
+      {
+        "groupe": "w",
+        "nombre": 23,
+        "pourcentage": 5.778894472361809
+      },
+      {
+        "groupe": "d",
+        "nombre": 22,
+        "pourcentage": 5.527638190954774
+      },
+      {
+        "groupe": "j",
+        "nombre": 21,
+        "pourcentage": 5.276381909547739
+      },
+      {
+        "groupe": "i",
+        "nombre": 21,
+        "pourcentage": 5.276381909547739
+      },
+      {
+        "groupe": "y",
+        "nombre": 16,
+        "pourcentage": 4.0201005025125625
+      },
+      {
+        "groupe": "b",
+        "nombre": 15,
+        "pourcentage": 3.7688442211055277
+      },
+      {
+        "groupe": "r",
+        "nombre": 14,
+        "pourcentage": 3.5175879396984926
+      },
+      {
+        "groupe": "o",
+        "nombre": 11,
+        "pourcentage": 2.763819095477387
+      },
+      {
+        "groupe": "t",
+        "nombre": 7,
+        "pourcentage": 1.7587939698492463
+      },
+      {
+        "groupe": "z",
+        "nombre": 4,
+        "pourcentage": 1.0050251256281406
+      },
+      {
+        "groupe": "s",
+        "nombre": 4,
+        "pourcentage": 1.0050251256281406
+      },
+      {
+        "groupe": "c",
+        "nombre": 4,
+        "pourcentage": 1.0050251256281406
+      },
+      {
+        "groupe": "h",
+        "nombre": 3,
+        "pourcentage": 0.7537688442211056
+      },
+      {
+        "groupe": "x",
+        "nombre": 2,
+        "pourcentage": 0.5025125628140703
+      },
+      {
+        "groupe": "u",
+        "nombre": 2,
+        "pourcentage": 0.5025125628140703
+      },
+      {
+        "groupe": "q",
+        "nombre": 1,
+        "pourcentage": 0.25125628140703515
+      },
+      {
+        "groupe": "v",
+        "nombre": 1,
+        "pourcentage": 0.25125628140703515
+      },
+      {
+        "groupe": "l",
+        "nombre": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "groupe": "m",
+        "nombre": 0,
+        "pourcentage": 0.0
+      },
+      {
+        "groupe": "n",
+        "nombre": 0,
+        "pourcentage": 0.0
+      }
+    ],
+    "bigrammes": [
+      {
+        "groupe": "ag",
+        "nombre": 14,
+        "pourcentage": 3.526448362720403
+      },
+      {
+        "groupe": "wa",
+        "nombre": 13,
+        "pourcentage": 3.27455919395466
+      },
+      {
+        "groupe": "ya",
+        "nombre": 10,
+        "pourcentage": 2.5188916876574305
+      },
+      {
+        "groupe": "af",
+        "nombre": 9,
+        "pourcentage": 2.2670025188916876
+      },
+      {
+        "groupe": "kp",
+        "nombre": 9,
+        "pourcentage": 2.2670025188916876
+      },
+      {
+        "groupe": "ef",
+        "nombre": 8,
+        "pourcentage": 2.0151133501259446
+      },
+      {
+        "groupe": "ab",
+        "nombre": 7,
+        "pourcentage": 1.7632241813602014
+      },
+      {
+        "groupe": "ak",
+        "nombre": 7,
+        "pourcentage": 1.7632241813602014
+      },
+      {
+        "groupe": "ik",
+        "nombre": 7,
+        "pourcentage": 1.7632241813602014
+      },
+      {
+        "groupe": "jg",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      },
+      {
+        "groupe": "gg",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      },
+      {
+        "groupe": "ka",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      },
+      {
+        "groupe": "ap",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      },
+      {
+        "groupe": "bt",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      },
+      {
+        "groupe": "ra",
+        "nombre": 6,
+        "pourcentage": 1.5113350125944585
+      }
+    ],
+    "trigrammes": [
+      {
+        "groupe": "wag",
+        "nombre": 6,
+        "pourcentage": 1.5151515151515151
+      },
+      {
+        "groupe": "ejg",
+        "nombre": 4,
+        "pourcentage": 1.0101010101010102
+      },
+      {
+        "groupe": "bta",
+        "nombre": 4,
+        "pourcentage": 1.0101010101010102
+      },
+      {
+        "groupe": "awa",
+        "nombre": 4,
+        "pourcentage": 1.0101010101010102
+      },
+      {
+        "groupe": "yab",
+        "nombre": 4,
+        "pourcentage": 1.0101010101010102
+      },
+      {
+        "groupe": "ikp",
+        "nombre": 4,
+        "pourcentage": 1.0101010101010102
+      },
+      {
+        "groupe": "oej",
+        "nombre": 3,
+        "pourcentage": 0.7575757575757576
+      },
+      {
+        "groupe": "gya",
+        "nombre": 3,
+        "pourcentage": 0.7575757575757576
+      },
+      {
+        "groupe": "pwa",
+        "nombre": 3,
+        "pourcentage": 0.7575757575757576
+      },
+      {
+        "groupe": "agy",
+        "nombre": 3,
+        "pourcentage": 0.7575757575757576
+      }
+    ],
+    "etapes": [
+      {
+        "correspondances": {
+          "a": "e",
+          "g": "s",
+          "w": "l"
+        },
+        "texte": "_e___s_ess_e_lesles_e_e____e_les___l____es__e___e_______s_e___ele__s____ess__s__ele__e_____sselesl__e_________le_e_____e_e_les_e__e___e___e_s___es_e____e______se__e_______e____l____e________le____e_________e__________es____s___e_____ss_____________sse__l_s_e__ss_s_e_es_e______e_e_____l_ses__________s_____e__e_lesele_es________e__s____s___e__el___ll__e______se__e_le_____e___s_le_ls______el__e____"
+      },
+      {
+        "correspondances": {
+          "y": "d",
+          "a": "e",
+          "o": "p",
+          "e": "u",
+          "j": "i",
+          "g": "s",
+          "b": "c",
+          "w": "l"
+        },
+        "texte": "depuisdessieclesles_e_e__u_e_lesdipl____esc_e_c_e_______s_e___eleu_s__d_ess__s_uele__e_ipuisselesli_eu_p____c_ledec____edeclespe__e__deu_pe_s___esdec___e_i_du_sec_e_c___u_e_p__l___de______u_le___deu___di___eu__u___i_uesu__is___e__puiss___p_u___i_c_sse_plusieu_ss_s_e_esdec_i___e_e__u_ilises_u__u_d_uisu_i__e__e_lesele_es______c_e_us_u_us___e_del_c_lli_ep_u___se__e_lec_uc_e_dus_leilsu___u_el__e_i__"
+      },
+      {
+        "correspondances": {
+          "y": "d",
+          "a": "e",
+          "o": "p",
+          "e": "u",
+          "j": "i",
+          "g": "s",
+          "b": "c",
+          "w": "l",
+          "h": "g",
+          "k": "n",
+          "f": "r",
+          "i": "a",
+          "x": "x",
+          "p": "t",
+          "d": "o",
+          "r": "m",
+          "t": "h",
+          "z": "q",
+          "s": "v",
+          "c": "f",
+          "u": "j",
+          "q": "y",
+          "v": "b"
+        },
+        "texte": "depuisdessiecleslesgenerauxetlesdiplomatescherchentatransmettreleursordressansquelennemipuisseleslireunprotocoledechangedeclespermetadeuxpersonnesdeconvenirdunsecretcommunenparlantdevanttoutlemondeunordinateurquantiquesuffisammentpuissantpourraitcasserplusieurssystemesdechiffrementutilisesaujourdhuisurinternetleselevesontmarchejusquausommetdelacollinepourobserverlecoucherdusoleilsurtoutelaregion"
+      }
+    ],
+    "clair": "depuisdessiecleslesgenerauxetlesdiplomatescherchentatransmettreleursordressansquelennemipuisseleslireunprotocoledechangedeclespermetadeuxpersonnesdeconvenirdunsecretcommunenparlantdevanttoutlemondeunordinateurquantiquesuffisammentpuissantpourraitcasserplusieurssystemesdechiffrementutilisesaujourdhuisurinternetleselevesontmarchejusquausommetdelacollinepourobserverlecoucherdusoleilsurtoutelaregion",
+    "cle_compatible": "ivbyachtjulwrkdozfgpesmxqn",
+    "lettres_chiffrees_absentes": "lmn",
+    "lettres_claires_absentes": "kwz",
+    "nombre_completions": 6,
+    "reencodage_exact": true,
+    "espace_cles": 403291461126605635584000000,
+    "bits_cles": 88.38195332701626
+  },
+  "otp_traces": [
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "m_hex": "1104824a6b23092900c412c088806411d052c491",
+      "m_bits": "0001000100000100100000100100101001101011001000110000100100101001000000001100010000010010110000001000100010000000011001000001000111010000010100101100010010010001",
+      "k": "48f42f09be44cd985c7b8094f0be6f0c53b20f06",
+      "c": "59f0ad43d567c4b15cbf9254783e0b1d83e0cb97",
+      "bob": "ceciestlemessageclairadechiffrer"
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "m_hex": "1104824a6b23092900c412c088806411d052c491",
+      "m_bits": "0001000100000100100000100100101001101011001000110000100100101001000000001100010000010010110000001000100010000000011001000001000111010000010100101100010010010001",
+      "k": "13f6b41cb7c47c2ea63f8fe5fd14be142b6b8df7",
+      "c": "02f23656dce77507a6fb9d257594da05fb394966",
+      "bob": "ceciestlemessageclairadechiffrer"
+    },
+    {
+      "m": "ceciestlemessageclairadechiffrer",
+      "m_hex": "1104824a6b23092900c412c088806411d052c491",
+      "m_bits": "0001000100000100100000100100101001101011001000110000100100101001000000001100010000010010110000001000100010000000011001000001000111010000010100101100010010010001",
+      "k": "06ae29c5adf5b760e64d019df68e1b89e953ed68",
+      "c": "17aaab8fc6d6be49e689135d7e0e7f98390129f9",
+      "bob": "ceciestlemessageclairadechiffrer"
+    }
+  ],
+  "otp_alternatif": {
+    "m_prime": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "k_prime": "59f0ad43d567c4b15cbf9254783e0b1d83e0cb97",
+    "verification": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "otp_reutilisation": {
+    "xor": "3aa2ca740dcb90986418aa0e9faebeafe6d5096908ec47739cddc0000000",
+    "candidats": [
+      {
+        "position": 1,
+        "fragment_m2": "fachtcdsk"
+      },
+      {
+        "position": 11,
+        "fragment_m2": "gbxtwxgmn"
+      },
+      {
+        "position": 13,
+        "fragment_m2": "wrwggfhup"
+      },
+      {
+        "position": 19,
+        "fragment_m2": "gofgqxryj"
+      },
+      {
+        "position": 21,
+        "fragment_m2": "eeqgrrdbg"
+      },
+      {
+        "position": 23,
+        "fragment_m2": "reradiman"
+      },
+      {
+        "position": 25,
+        "fragment_m2": "qcdzmjhkh"
+      },
+      {
+        "position": 30,
+        "fragment_m2": "eypqygaxy"
+      },
+      {
+        "position": 31,
+        "fragment_m2": "gqnfkmsxy"
+      },
+      {
+        "position": 36,
+        "fragment_m2": "bnspvvole"
+      },
+      {
+        "position": 37,
+        "fragment_m2": "tnsizcole"
+      },
+      {
+        "position": 38,
+        "fragment_m2": "tnveocole"
+      },
+      {
+        "position": 39,
+        "fragment_m2": "tkztocole"
+      }
+    ],
+    "statut": "reconstruction linguistique compatible, rechiffrement vérifié",
+    "m1": "modifiezimmediatementleprotocoledesecuritexxxxxx",
+    "m2": "leserveurcentralredemarreradimancheaminuitxxxxxx",
+    "verification": {
+      "cle": "f5289bcb08154b7fc6aaca0684ece215d8fde5f67e5184521147bbab9e5d",
+      "c1_valide": true,
+      "c2_valide": true,
+      "compatibles": true
+    },
+    "extensions": [
+      {
+        "hypothese_sur": "m2",
+        "position": 18,
+        "hypothese": "demarreradimanche",
+        "fragment_autre": "entleprotocoledes"
+      },
+      {
+        "hypothese_sur": "m1",
+        "position": 23,
+        "hypothese": "protocoledesecurite",
+        "fragment_autre": "reradimancheaminuit"
+      },
+      {
+        "hypothese_sur": "m1",
+        "position": 0,
+        "hypothese": "modifiezimmediatement",
+        "fragment_autre": "leserveurcentralredem"
+      }
+    ]
+  },
+  "mac_traces": [
+    {
+      "m_hex": "0000000000000000",
+      "m_bits": "0000000000000000000000000000000000000000000000000000000000000000",
+      "k": "9deab5093d00bd90",
+      "t": "3d00bd90",
+      "v": 1,
+      "m_prime": "8000000000000000",
+      "v_prime": 1
+    },
+    {
+      "m_hex": "8000000000000000",
+      "m_bits": "1000000000000000000000000000000000000000000000000000000000000000",
+      "k": "9deab5093d00bd90",
+      "t": "3d00bd90",
+      "v": 1,
+      "m_prime": "0000000000000000",
+      "v_prime": 1
+    },
+    {
+      "m_hex": "00000000ffffffff",
+      "m_bits": "0000000000000000000000000000000011111111111111111111111111111111",
+      "k": "9deab5093d00bd90",
+      "t": "c2ff426f",
+      "v": 1,
+      "m_prime": "80000000ffffffff",
+      "v_prime": 1
+    },
+    {
+      "m_hex": "aaaaaaaaaaaaaaaa",
+      "m_bits": "1010101010101010101010101010101010101010101010101010101010101010",
+      "k": "9deab5093d00bd90",
+      "t": "97aa173a",
+      "v": 1,
+      "m_prime": "2aaaaaaaaaaaaaaa",
+      "v_prime": 1
+    }
+  ],
+  "mac_forgerie": {
+    "k_bas": "4c3af3f3",
+    "tag": "b48b1f21",
+    "cles_compatibles": [
+      "000000004c3af3f3",
+      "000000014c3af3f3"
+    ]
+  },
+  "vigenere": {
+    "kasiski": [
+      {
+        "trigramme": "boj",
+        "positions": [
+          234,
+          353
+        ],
+        "distances": [
+          119
+        ]
+      },
+      {
+        "trigramme": "bpi",
+        "positions": [
+          182,
+          266
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "cfw",
+        "positions": [
+          153,
+          454
+        ],
+        "distances": [
+          301
+        ]
+      },
+      {
+        "trigramme": "cvt",
+        "positions": [
+          313,
+          397
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "dkq",
+        "positions": [
+          96,
+          103
+        ],
+        "distances": [
+          7
+        ]
+      },
+      {
+        "trigramme": "dxc",
+        "positions": [
+          311,
+          395
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "ebn",
+        "positions": [
+          72,
+          405
+        ],
+        "distances": [
+          333
+        ]
+      },
+      {
+        "trigramme": "eeb",
+        "positions": [
+          26,
+          404
+        ],
+        "distances": [
+          378
+        ]
+      },
+      {
+        "trigramme": "eft",
+        "positions": [
+          34,
+          209
+        ],
+        "distances": [
+          175
+        ]
+      },
+      {
+        "trigramme": "epo",
+        "positions": [
+          317,
+          401
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "fte",
+        "positions": [
+          35,
+          210
+        ],
+        "distances": [
+          175
+        ]
+      },
+      {
+        "trigramme": "fwi",
+        "positions": [
+          154,
+          455
+        ],
+        "distances": [
+          301
+        ]
+      },
+      {
+        "trigramme": "ihn",
+        "positions": [
+          64,
+          148
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "ilb",
+        "positions": [
+          268,
+          457
+        ],
+        "distances": [
+          189
+        ]
+      },
+      {
+        "trigramme": "jiv",
+        "positions": [
+          84,
+          203
+        ],
+        "distances": [
+          119
+        ]
+      },
+      {
+        "trigramme": "lvs",
+        "positions": [
+          306,
+          376
+        ],
+        "distances": [
+          70
+        ]
+      },
+      {
+        "trigramme": "nxj",
+        "positions": [
+          325,
+          423
+        ],
+        "distances": [
+          98
+        ]
+      },
+      {
+        "trigramme": "pnc",
+        "positions": [
+          135,
+          142
+        ],
+        "distances": [
+          7
+        ]
+      },
+      {
+        "trigramme": "scf",
+        "positions": [
+          152,
+          453
+        ],
+        "distances": [
+          301
+        ]
+      },
+      {
+        "trigramme": "swe",
+        "positions": [
+          207,
+          277
+        ],
+        "distances": [
+          70
+        ]
+      },
+      {
+        "trigramme": "twe",
+        "positions": [
+          315,
+          399
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "ucb",
+        "positions": [
+          19,
+          180
+        ],
+        "distances": [
+          161
+        ]
+      },
+      {
+        "trigramme": "uih",
+        "positions": [
+          63,
+          68,
+          392
+        ],
+        "distances": [
+          5,
+          324
+        ]
+      },
+      {
+        "trigramme": "ulo",
+        "positions": [
+          243,
+          411
+        ],
+        "distances": [
+          168
+        ]
+      },
+      {
+        "trigramme": "urv",
+        "positions": [
+          5,
+          250
+        ],
+        "distances": [
+          245
+        ]
+      },
+      {
+        "trigramme": "vip",
+        "positions": [
+          7,
+          22
+        ],
+        "distances": [
+          15
+        ]
+      },
+      {
+        "trigramme": "vtw",
+        "positions": [
+          314,
+          398
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "wep",
+        "positions": [
+          316,
+          400
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "xcv",
+        "positions": [
+          312,
+          396
+        ],
+        "distances": [
+          84
+        ]
+      },
+      {
+        "trigramme": "yco",
+        "positions": [
+          107,
+          338
+        ],
+        "distances": [
+          231
+        ]
+      }
+    ],
+    "essais": [
+      {
+        "longueur": 1,
+        "ic_moyen": 0.04275709891260647,
+        "cle": "b",
+        "texte": "lhumbtquhomlihitxmmtbauhorddavxjrjdesdvwtymsrzcpdthdxatildwmveuthgmethgodamjcolvlngdihucwpjtdtcjcjpdwqncjphxbnhiabhzcdkthvtnhslhvxxhiieombbqivombeqchgmbrbevhaceqrirqbihosyibiuprxzltbaohxadwrdpunaytohnrrxihutrvdesdzuxwnhfwvejeohautjtuhaniqfilkqtknwdjutqughaoguqxhvltiaohkapduqharvdawxznckmhuqzjuphuunitesuwdkurtxcwbusvdonehoylmwirihqlnhendxbnjhewtcradasdaniumrgqoxueqfpnbynsrcakurliqngbiqwmpgythgcwbusvdonddamrcctknfrlnsquwkmwiyflficxenfdtljbedsiaiyrgxvnrbevhkatje"
+      },
+      {
+        "longueur": 2,
+        "ic_moyen": 0.04281576744095485,
+        "cle": "pb",
+        "texte": "xhgmntcutoyluhutjmytnagharpdmvjjdjpeedhwfyysdzoppttdjafixdimhegttgyefhsopayjooxvxnsduhgcipvtptojojbdiqzcvptxnntimbtzodwttvfntsxhhxjhuiqoybnquvamnecctgybdbqvtaoecrurcbuhaskinigpdxllfbmotxmdirppgnmyfotndrjitufrhdqspzgxintfivqjqotagtvtghmnuqrixkctwnidvufqggtaaggqjhhlfimotkmppuchmrhdmwjzzcwmtuczvubhguzifeeuidwudtjcibgshdanqhayxmiiditqxntezdjbzjteitormdmspazigmdgcojuqqrpzbkneroawudluqzgnicwypsyfhscibgshdanpdmmdcotwnrrxneqgwwmiikfxfucjezfptxjnepsuauydgjvzrnehhwafjq"
+      },
+      {
+        "longueur": 3,
+        "ic_moyen": 0.04146351926238074,
+        "cle": "bcb",
+        "texte": "lgumatqtholligitwmmsbathoqddzvxirjcescvwsymrrzbpdshdwathldvmvdutggmdthfodzmjbolulnfdigucvpjsdtbjcipdvqnbjpgxbmhizbhycdjthutngslgvxwhiheolbbpivnmbdqcggmarbdvhzcepriqqbhhoryiaiuorxyltaaogxacwrcpumaysohmrrwihttruderdztxwmhfvveieogausjtthamiqeiljqtjnwcjusqufhangupxhulthaogkaoduphaqvdzwxyncjmhtqziupguumitdsuvdktrtwcwausudomehnyllwiqihplngencxbmjhdwtbracascanhumqgqnxudqfonbxnsqcajurkiqmgbhqwlpgxthfcwausudomddzmrbctjnfqlnrquvkmviyelfhcxdnfctlibecsiziyqgxunraevgkasje"
+      },
+      {
+        "longueur": 4,
+        "ic_moyen": 0.04319024698177227,
+        "cle": "pbgb",
+        "texte": "xhpmntlutohluhdtjmhtnapharydmvsjdjyeedqwfyhsdzxpptcdjaoixdrmhepttghefhbopahjoogvxnbduhpcipetptxjojkdiqicvpcxnncimbczodfttvontsghhxshuizoybwquvjmnelctghbdbzvtaxecrdrcbdhastinippdxulfbvotxvdirypgnvyfocndrsituorhdzspzpxincfivzjqocagtetghvnuqaixkltwnrdvuoqggcaagpqjhqlfivotkvppulhmrqdmwszzcfmtulzvukhguiifenuidfudtscibpshdjnqhjyxmridicqxncezdsbzjceitxrmdvspaiigmmgcosuqqapzbtnerxawumluqignilwypbyfhbcibpshdjnpdvmdcxtwnarxnnqgwfmiitfxfdcjeifptgjneysuadydgsvzrwehhfafjz"
+      },
+      {
+        "longueur": 5,
+        "ic_moyen": 0.04469686461271314,
+        "cle": "qxbha",
+        "texte": "wlugceuubpxpibjebmgumeubpchduwinrdepwdpxecmmskgpxushxuutpdqngiunirqenirsdunugofwwrgxjsycqquxdndugjjehunwkalxvosmavikgdeuszthidphpyilicfzqbvrtzogcpucbhxfrvfglawfbvilrmmhitjmbcvavxtmefaiiiedqsotuhbjxobocvxcifxrpepwdtvianbghzedfzlaouuxubbymqzjwoqnlyaddveuuailsgorilvfuteoblltdorserpelaxtonombvbdjoqsyuhjeisoxoouluigwvvdzdioplosmxailjsulhiprdrcynhyxegruelwduotymlhbsxofbjphcjrsldloulmtunactuwgqrctbhnabotghoheoemldnxkhgcpnmrfakgxtcffgtgxyoqhtfkmidmjlmylhiznlcpzhebene"
+      },
+      {
+        "longueur": 6,
+        "ic_moyen": 0.041169356958830644,
+        "cle": "ubpbqb",
+        "texte": "shgmmtxutoxlphutimttnafhvrpdlvejdjoezdhweytsdznpkttdiaaixdhmcegtsgtefhrokayjnosvxnrdphgchpqtptnjjjbdhqucvpsxintilbozodvtovfnssshhxihpiqoxbiquvzmieccsgtbdbpvoaoebrprcbthvskimibpdxklabmosxhdiropbnmyeoondriioufrgdlspzfxdntfhvljqosabtvtfhhnuqqiskctvnddvueqbgtazgbqjhglaimoskhppubhhrhdlwezzcvmouczuuwhguyiaeeuhdrudticdbgsgdvnqhzysmiicioqxnseudjbyjoeitnrhdmsoauigmcgxojupqmpzbjnzroavuyluqygiicwxpnyfhrcdbgsgdvnpdlmycotvnmrxndqbwwmhiffxftceezfotsjneospauycgevzrmechwaejl"
+      },
+      {
+        "longueur": 7,
+        "ic_moyen": 0.08052842679708351,
+        "cle": "beejkqr",
+        "texte": "lereseauelectriquedelaregionasubiunepanneimportanteapreslatempetedeverglasdumoisdernierunattaquantpatientpeutessayertouteslesclespossiblesmaislespacedesclesestparfoistropvastepourcelaleprogrammelitlefichierligneparlignecompteleslettresetafficheuntableaudesfrequencesalecranunesignaturenumeriquepermetdeprouverquunmessageprovientbiendesonauteuretquilnapasetemodifieencheminpourverifierlintegritedunmessageonajouteuncodedauthentificationcalculeapartirduneclesecrete"
+      },
+      {
+        "longueur": 8,
+        "ic_moyen": 0.04281987295825771,
+        "cle": "pbnbpbub",
+        "texte": "xhimntxutoaluhptjmatnabharrdmvejdjreedcwfyasdzjpptvdjaaixdkmhebttgaefhnopaajoosvxnuduhbcipxtptjjojddiqucvpvxnnoimbvzodrttvhntsshhxlhuiloybpquvvmneectgtbdbsvtajecrwrcbphasminibpdxnlfbhotxodirkpgnoyfoondrlituarhdsspzbxinvfivljqovagtqtghonuqmixketwnddvuhqggoaagiqjhclfiootkhppuehmrcdmwlzzcrmtuezvuwhgubifezuidyudtecibishdvnqhcyxmdidivqxnoezdlbzjoeitqrmdhspabigmygcoluqqmpzbmnerjawufluqugniewypnyfhucibbshdcnpdhmdcqtwnmrxngqgwrmiimfxfpcjebfptsjnersuapydglvzriehhyafjl"
+      },
+      {
+        "longueur": 9,
+        "ic_moyen": 0.041059158706217534,
+        "cle": "atjbpqidk",
+        "texte": "mpmmnejsypudittmvdnbtagshpueinxvccbvtlnwfjfqiakhdfswvruqddixoclupymqeaefeiejozetcoovitfvugkbvtouvhgeeinouifocvzimmaxteslhhegfjmpnxjsbgvputbctomdcmictrfzicmnhmnxoijzibushqpjjaubcqxcujsotitbnslhuzlrrfivjrjtasksdveeossoxvzfigxhvppsufumsybvaqrteihusfwpunrhvozaarnooiddtulhfbbxvucstpmeioxlyvidicizvfiflvvatqdnuulcjtjnpzltdvozpampmuoidtaocopwnpiulaimotoctbrtlsnuffpxrwpuqbynecgfsdntilstaqzrughxuhgkeaetxjmshohlueieronmiegzdnebnubneayrwygtymffpeehsflkimtrpxydfrnpofbbbbe"
+      },
+      {
+        "longueur": 10,
+        "ic_moyen": 0.04329324699352451,
+        "cle": "ucdbobjnhb",
+        "texte": "sgsmotiibotkghvtpagtizshbrvruveipjqekrpwaxksezudxtocvagidrqmcdstugesnhnnbazjucfvsmedvhmqqpqsbtpjuxjddplcwpzlvnohybuzuretournusdvpxeggiroepvqpummoeiqbgtapbrvzowexqgrdbavisfhzihpjltlaayouxsrqrkosnnylcbnyqviuulfpdlrbzhxobbfducjrozootqsshnnaezisjotxnorduapsguaguoqegtlgiscbkhobudhsfpdhvvzaccabuxyhuchmihiadqujdciltebubhsnrinlgmyymowliopjnuefrrbuifejtufudhrbaaimalgxnvurqxdhbfmqrpacillpplgoiikgpnxrhtcoposccmnqdsalcjsinsrdbmqbvimjiqtffpbveafvhfjidbsvaamlgeulroenveaaic"
+      },
+      {
+        "longueur": 11,
+        "ic_moyen": 0.042283298097251586,
+        "cle": "exoachxjrhb",
+        "texte": "ilhnanumrimimujsrqedvarlbscxenhdrghrtcpaligsodpqcnlvhutfpqxlpimdbgjigifihswdclpimmaharocttwucngbmdpaadobdtzhvnemncgtgvunhsxairflnhrhfmrplvfispojfrrbbkellbbzubbyujslqymuprsmtsopobmmsvegrraaaeeoorsinoereswclmdlvaifeyoboxbftzrkdilsenjqyubmcuxsfknxxovxnmdkudlnpfouprplqmnpgeehnoqeeewcuapjhchquvptnmzburrvudmyoneuoxkdvvykfxokiupxfqoslieuyogyrvhvnglrxswvsnusaeajtgvyaixridgohfqxmrzexvqfmixabfujnoaclractfhtuxsfnxajvpdserxbfnpuhxjgaaizlcmpydhjvdfjyiqthumqbaxsrecdplcknjb"
+      },
+      {
+        "longueur": 12,
+        "ic_moyen": 0.04259826628247681,
+        "cle": "poimqcubrnvb",
+        "texte": "xunbmsxurcsluubiilttloahaewsluejbxjeeqolextsbnippgasizaivrcmhrnisftedvmopnfynnsvvbmduunrhoqtnhijowishpuctdnxnaaxlaozmrqttimcsrshfldhuvxdxaiqsjumnrjrsftbbpkvtnvtbqprapohafrxmhbpblflfotdswhdgfjpgatnenonbfdithmggclsnnaxiaauhuljocnaggcifghnselixxjivmddtizqgtapzfbqhvblfvtdsjhpniwhmeoslvezxqqmthjoutwheitifrljhcrubhdcionhgcvnovuyxzpxchoqvbnezqqqyioeghirmqthozuieaxgcbqjppmpxpeneevpvtylsetgnvjlxonydvmcionhgcvnnrgmdpvivmmrvbyqgjdbhhffvtocjrguossjlsjsunbncfevxfhehudpeil"
+      }
+    ],
+    "retenu": {
+      "longueur": 7,
+      "ic_moyen": 0.08052842679708351,
+      "cle": "beejkqr",
+      "texte": "lereseauelectriquedelaregionasubiunepanneimportanteapreslatempetedeverglasdumoisdernierunattaquantpatientpeutessayertouteslesclespossiblesmaislespacedesclesestparfoistropvastepourcelaleprogrammelitlefichierligneparlignecompteleslettresetafficheuntableaudesfrequencesalecranunesignaturenumeriquepermetdeprouverquunmessageprovientbiendesonauteuretquilnapasetemodifieencheminpourverifierlintegritedunmessageonajouteuncodedauthentificationcalculeapartirduneclesecrete"
+    }
+  },
+  "exemples_aleatoires": {
+    "Gen1": {
+      "k": [
+        16,
+        25
+      ],
+      "c": "sdshurjkulurizwdskqhhztdsgyevquq",
+      "m_retrouve": "ceciestlemessageclairadechiffrer"
+    },
+    "Gen3": {
+      "k": "hxdtpuyzelwvjafigncbomqksr",
+      "c": "dpdepcbvpjpcchypdvhenhtpdzeuunpn",
+      "m_retrouve": "ceciestlemessageclairadechiffrer"
+    },
+    "Gen2": {
+      "k": "478930a0638ea5a908211a5adbbf78466440a2c1",
+      "c": "568db2ea08adac8008e5089a533f1c57b4126650",
+      "m_retrouve": "ceciestlemessageclairadechiffrer"
+    },
+    "Gen_MAC": {
+      "k": "ba63b6bf53914f98",
+      "m": "0000000000000000",
+      "t": "53914f98",
+      "v_valide": 1,
+      "v_invalide": 0
+    }
+  }
+}
