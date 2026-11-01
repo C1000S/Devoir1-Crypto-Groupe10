@@ -1,0 +1,34 @@
+IFT814 - Cryptographie - Devoir 2 (Automne 2026)
+FICHE DE PARAMETRES - EQUIPE 05
+================================================================
+
+PARTIE 1 - Diffie-Hellman modulo p = 2^61 - 1
+  p = 2305843009213693951
+  g = 37  (racine primitive modulo p)
+  Cle privee imposee d'Alice : x = 974264167110881
+  Cle privee imposee de Bob  : y = 23179607248816
+  Message qu'Alice envoie a Bob, une fois la cle etablie : "nouvelle cle generee aujourd hui"
+  [Verification 1.2] h_A = g^x mod p = 1728559941401253307
+  [Verification 1.2] h_B = g^y mod p = 1512476708919266528
+  [Verification 1.2] K_AB mod 2^32 (secret partage tronque) = 3512349958
+  [Verification 1.3] Chiffrement XOR du message avec la cle K (hex) = bf354070b4365963f1395963f13d5068b4285063f13b406cbe2f4762f132406f
+
+PARTIE 2 - RSA textbook
+  p = 209287069
+  q = 221536921
+  e = 65537
+  Message a chiffrer : m = 1394500914838255
+  Cryptogramme a dechiffrer : c' = 3632978084399643
+  [Verification 2.1] d (exposant de dechiffrement) = 42716440715327873
+  [Verification 2.2] c = Enc(m) = 31963660340929498
+  [Verification 2.2] m' = Dec(c') = 45361714772588724
+  [Verification 2.4] c_mal = c * 2^e mod N = 35103694930280065
+  [Verification 2.4] Dec(c_mal) = 2789001829676510  (doit valoir 2m mod N)
+
+PARTIE 3 - Signatures RSA textbook (meme cle qu'en partie 2)
+  Message 1 a signer (requete a l'oracle) : m1 = 23151899524468793
+  Message 2 a signer (requete a l'oracle) : m2 = 15034505925449428
+  [Verification 3.2] s1 = Sign(m1) = 40495289341296419
+  [Verification 3.2] s2 = Sign(m2) = 4958833821949512
+  [Verification 3.4] m_cible = m1*m2 mod N = 35566973915918092
+  [Verification 3.4] s_cible = s1*s2 mod N = 7736092144531737  (doit satisfaire Verify(m_cible, s_cible)=1)
