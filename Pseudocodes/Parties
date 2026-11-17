@@ -1,0 +1,293 @@
+Partie01
+1.1	- Exponentiation modulaire rapide
+
+Fonction ExpMod(a, b, n)
+    résultat ← 1
+    Pour chaque bit de b, de gauche à droite
+        résultat ← (résultat × résultat) mod n
+        Si le bit = 1
+            résultat ← (résultat × a) mod n
+    Retourner résultat
+
+
+1.2	- Les quatre algorithmes
+
+
+•	Côté Alice — étapes 1 et 3
+
+p ← 127
+g ← 3
+x ← 19
+
+// Étape 1 : calculer et envoyer la valeur publique
+h_A ← ExpMod(g, x, p)
+Envoyer h_A à Bob
+
+// Étape 3 : recevoir la valeur de Bob et calculer la clé
+Recevoir h_B de Bob
+k_A ← ExpMod(h_B, x, p)
+
+
+
+•	Côté Bob — étapes 2 et 4
+p ← 127
+g ← 3
+y ← 43
+
+// Étape 2 : calculer et envoyer la valeur publique
+h_B ← ExpMod(g, y, p)
+Envoyer h_B à Alice
+
+// Étape 4 : recevoir la valeur d’Alice et calculer la clé
+Recevoir h_A d’Alice
+k_B ← ExpMod(h_A, y, p)
+
+
+Eve essaie tous les secrets possibles jusqu’à retrouver celui qui produit h_A.
+
+Fonction RechercheExhaustive(p, g, h_A, h_B)
+    Pour candidat allant de 1 à p − 1
+        Si ExpMod(g, candidat, p) = h_A
+            x ← candidat
+            k ← ExpMod(h_B, x, p)
+            Retourner (x, k)
+    Retourner « Aucun secret trouvé »
+
+------------------------------------------------------------------------------
+Partie 02
+•	Pseudocode d’Euclide étendu
+
+Fonction EuclideEtendu(a, b)
+    Si b = 0
+        Retourner (a, 1, 0)
+
+    (g, x, y) ← EuclideEtendu(b, a mod b)
+    Retourner (g, y, x − (a div b) × y)
+
+
+Les quatre alogrorithmes
+
+•	E1 – Chiffrement
+Fonction E1(pk, m)
+    (N, e) ← pk
+    c ← ExpMod(m, e, N)
+    Retourner c
+Fin Fonction
+
+
+•	D1 – Déchiffrement
+Fonction D1(sk, c)
+    (N, d) ← sk
+    m ← ExpMod(c, d, N)
+    Retourner m
+Fin Fonction
+
+
+•	Sign2 – Signature
+Fonction Sign2(sk, m)
+    (N, d) ← sk
+    s ← ExpMod(m, d, N)
+    Retourner s
+Fin Fonction
+
+
+•	Verif2 – vérification
+Fonction Verif2(pk, m, s)
+    (N, e) ← pk
+    v ← 0
+    Si 0 ≤ m < N et 0 ≤ s < N alors
+        Si ExpMod(s, e, N) = m alors
+            v ← 1
+        Fin Si
+    Fin Si
+    Retourner v
+Fin Fonction
+------------------------------------------------------------------------
+Partie 3
+
+3.1.3	Vérification du certificat
+
+Fonction VerifierCertificat(cert, pk_C, nom_attendu)
+
+    Si cert est mal formé
+        Retourner FAUX
+
+    Extraire (contenu, signature_C) de cert
+    Extraire (type, emetteur, nom, pk) de contenu
+
+    Si type ≠ "Certificat" ou emetteur ≠ "Charlie"
+        Retourner FAUX
+
+    Si nom ≠ nom_attendu
+        Retourner FAUX
+
+    Si Verif_Sign(pk_C, contenu, signature_C) = FAUX
+        Retourner FAUX
+
+    Retourner VRAI
+
+
+•	Message 1 — Alice → Bob
+Alice :
+    N_A ← valeur aléatoire fraîche
+    L_A ← liste des suites supportées et autorisées par Alice
+
+    Envoyer M1 = ("Initialisation", Alice, Bob, N_A, L_A, cert_A)
+    Mémoriser exactement M1
+	
+	
+•	Message 2 — Bob → Alice
+Bob :
+    VérifierCertificat(cert_A, pk_C, "Alice")
+    Si la vérification échoue : abandonner
+
+    N_B ← valeur aléatoire fraîche
+    L_B ← liste des suites supportées et autorisées par Bob
+    suite ← MeilleureSuiteCommune(L_A, L_B)
+    Si aucune suite commune acceptable : abandonner
+
+    (p, g, q) ← paramètres du groupe de la suite choisie
+    y ← exposant secret frais, choisi aléatoirement dans {1, ..., q − 1}
+    h_B ← ExpMod(g, y, p)
+
+    R_B ← (Bob, Alice, N_B, L_B, suite, h_B, cert_B)
+    signature_B ← Sign(sk_B, Encoder("Réponse Bob", M1, R_B))
+
+    Envoyer M2 = (R_B, signature_B)
+
+•	Message 3 — Alice → Bob
+Alice :
+    VérifierCertificat(cert_B, pk_C, "Bob")
+    Si la vérification échoue : abandonner
+
+    Vérifier les identités et que M2 répond à la session en cours
+
+    Vérifier que suite = MeilleureSuiteCommune(L_A, L_B)
+    Si ce n’est pas le cas : abandonner
+
+    Vérifier que h_B appartient au groupe choisi et h_B ≠ 1
+    Si la vérification échoue : abandonner
+
+    Vérifier signature_B avec pk_B sur :
+        Encoder("Réponse Bob", M1 mémorisé, R_B)
+    Si la signature est invalide : abandonner
+
+    x ← exposant secret frais, choisi aléatoirement dans {1, ..., q − 1}
+    h_A ← ExpMod(g, x, p)
+    Z ← ExpMod(h_B, x, p)
+
+    T ← Encoder("Protocole DH authentifié v1", M1, R_B, h_A)
+
+    (k, k_conf_A, k_conf_B) ← KDF(Z, contexte = T)
+
+    signature_A ← Sign(sk_A, Encoder("Authentification Alice", T))
+    tag_A ← MAC(k_conf_A, Encoder("Confirmation Alice", T))
+
+    Envoyer M3 = (h_A, signature_A, tag_A)
+
+
+•	Message 4 — Bob → Alice
+Bob :
+    Vérifier que M3 correspond à une session en cours
+    Vérifier que h_A appartient au groupe choisi et h_A ≠ 1
+    Si une vérification échoue : abandonner
+
+    T ← Encoder("Protocole DH authentifié v1", M1 reçu, R_B envoyé, h_A)
+
+    Vérifier signature_A avec pk_A sur :
+        Encoder("Authentification Alice", T)
+    Si la signature est invalide : abandonner
+
+    Z ← ExpMod(h_A, y, p)
+    (k, k_conf_A, k_conf_B) ← KDF(Z, contexte = T)
+
+    Vérifier tag_A sur Encoder("Confirmation Alice", T)
+        avec k_conf_A
+    Si le MAC est invalide : abandonner
+
+    tag_B ← MAC(k_conf_B, Encoder("Confirmation Bob", T))
+    Envoyer M4 = (tag_B)
+
+    Accepter la session et produire k
+    Effacer y, Z et les clés de confirmation devenues inutiles
+
+Alice :
+    Vérifier tag_B sur Encoder("Confirmation Bob", T)
+        avec k_conf_B
+    Si le MAC est invalide : abandonner
+
+    Accepter la session et produire k
+    Effacer x, Z et les clés de confirmation devenues inutiles
+
+
+3.3	  -Record layer
+
+Hypothèses sur k et les sous-clés
+
+contexte ← Encoder(sid, "Alice", "Bob", suite_choisie)
+
+K_enc_AB ← KDF(k, Encoder("Chiffrement A vers B", contexte))
+K_mac_AB ← KDF(k, Encoder("MAC A vers B", contexte))
+
+K_enc_BA ← KDF(k, Encoder("Chiffrement B vers A", contexte))
+K_mac_BA ← KDF(k, Encoder("MAC B vers A", contexte))
+
+
+•	Pseudocode de Envoyer(m_i)
+Les variables locales direction_envoi, K_enc_envoi et K_mac_envoi dépendent du participant.
+Fonction Envoyer(m_i)
+
+    Si compteur_envoi est épuisé
+        Exiger une nouvelle session
+        Retourner ÉCHEC
+
+    numero ← compteur_envoi
+    compteur_envoi ← compteur_envoi + 1
+    // Réserver ce numéro sans jamais le réutiliser
+
+    entete ← Encoder(sid, direction_envoi, numero)
+
+    IV ← GenererIVSelonLeChiffrement()
+    c ← E_CPriv(K_enc_envoi, IV, m_i)
+
+    tag ← MAC(K_mac_envoi, Encoder(entete, IV, c))
+
+    paquet ← (sid, direction_envoi, numero, IV, c, tag)
+    Transmettre paquet
+
+
+
+•	Pseudocode de Recevoir (paquet)
+On adopte une réception stricte : seul le prochain numéro attendu est accepté.
+Fonction Recevoir(paquet)
+
+    Si paquet est mal formé
+        Retourner REJET
+
+    Extraire (session, direction, numero, IV, c, tag)
+
+    Si session ≠ sid ou direction ≠ direction_reception
+        Retourner REJET
+
+    entete ← Encoder(session, direction, numero)
+
+    Si Verif_MAC(K_mac_reception,
+                 Encoder(entete, IV, c), tag) = FAUX
+        Retourner REJET
+
+    // Examiner le numéro seulement après authentification
+    Si numero < compteur_reception
+        Retourner "Rejeu ou ancien message"
+
+    Si numero > compteur_reception
+        Retourner "Message hors d’ordre ou message manquant"
+
+    m_i ← D_CPriv(K_enc_reception, IV, c)
+
+    Si le déchiffrement échoue
+        Retourner REJET
+
+    compteur_reception ← compteur_reception + 1
+    Livrer m_i à l’application
+
+
